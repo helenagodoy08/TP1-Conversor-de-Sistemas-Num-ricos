@@ -339,7 +339,88 @@ void hexadpbinario(){
     return;
 }
 void calcmaximos(){
+    int bits, maximo;
 
+    cout<<"Insira a quantidade de bits"<<endl;
+    cin>>bits; //pow(base,expoente)
+
+    maximo = pow(2, bits) -1; //maximo esta em decimal
+    
+    cout<<"Maior número binário: ";
+    int resto[100];
+    if (maximo==0){
+        cout<<"0";
+        return;
+    }
+
+    int valor=maximo;
+    int i=0;
+    while (valor>0){
+        resto[i]=valor%2;
+        valor=valor/2;
+        i++;
+    }
+     for (int j=i-1; j>=0; j--){
+      cout<<resto[j];    
+    }
+    cout<<endl;
+
+    cout<<"Maior número octal: ";
+    int resto1[100];
+    if (maximo==0){
+        cout<<"0";
+        return;
+    }
+
+    int valor1=maximo;
+    i=0;
+    while (valor1>0){
+        resto1[i]=valor1%8;
+        valor1=valor1/8;
+        i++;
+    }
+
+    for (int j=i-1; j>=0; j--){
+      cout<<resto1[j];    
+    }
+    cout<<endl;
+
+    cout<<"Maior número decimal: "<<maximo<<endl;
+
+    cout<<"Maior número hexadecimal: ";
+    int resto2[100];
+    if (maximo==0){
+        cout<<"0";
+        return;
+    }
+
+    int valor2=maximo;
+    i=0;
+    while (valor2>0){
+        resto2[i]=valor2%16;
+        valor2=valor2/16;
+        i++;
+    }
+
+    for (int j=i-1; j>=0; j--){
+        if (resto2[j]<10){
+            cout<<resto2[j];
+        } else if (resto2[j]==10){
+            cout<<'A';
+        } else if (resto2[j]==11){
+            cout<<'B';
+        } else if (resto2[j]==12){
+            cout<<'C';
+        } else if (resto2[j]==13){
+            cout<<'D';
+        } else if (resto2[j]==14){
+            cout<<'E';
+        } else if (resto2[j]==15){
+            cout<<'F';
+        }
+    }
+    
+    return;
 }
 
 int main(){
@@ -351,7 +432,7 @@ int main(){
     cout<<"4:Octal para binário"<<endl;
     cout<<"5:Binário para hexadecimal"<<endl;
     cout<<"6:Hexadecimal para binário"<<endl;
-    cout<<"7:Calculadora de máximos"<<endl;
+    cout<<"7:Calculadora de máximo representável por k bits"<<endl;
 
     cin>>opcao;
 
