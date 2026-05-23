@@ -6,25 +6,50 @@ void decimalpbase() {
     int decimal, base;
     int resto[100];
 
-    cout<<"Digite um número decimal:"<<endl;
+    cout<<"Digite um numero decimal:"<<endl;
     cin>>decimal;
 
-    cout<<"Digite a base para conversão:"<<endl;
-    cout<<"Para base binária:2, octal:8 e hexadecimal:16"<<endl;
+    cout<<"Digite a base para conversao:"<<endl;
+    cout<<"Para base binaria:2, octal:8 e hexadecimal:16"<<endl;
     cin>>base;
+
+    char escolha;
+    bool passo;
+    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    cin>>escolha;
+    if (escolha=='S'){
+        passo=true;
+    } else {
+        passo=false;
+    }
 
     if (decimal==0){
         cout<<"Resultado: 0";
         return;
     }
 
+    if (passo){
+        cout<<"Numero Divisor Quociente Resto"<<endl;
+        
+    }
+
     int i=0;
     while (decimal>0){
+        if (passo){
+            cout << decimal << "        ";
+            cout << base << "        ";
+            cout << decimal/base << "        ";
+            cout << decimal%base << endl;
+
+        }
         resto[i]=decimal%base;
         decimal=decimal/base;
         i++;
     }
 
+    if (passo){
+        cout<<"Lendo os resultados de baixo para cima:"<<endl;
+    }
     cout<<"Resultado: ";
     
     for (int j=i-1; j>=0; j--){
@@ -48,34 +73,70 @@ void decimalpbase() {
     return;
 }
 void basepdecimal() {
-    int decimal=0, base; 
-    int digito=0; 
+    int base, decimal=0;
+    int digito=0, resultado=0;
     string n;
 
-    std::cout<<"Digite a base para conversão:"<<endl;
-    std::cout<<"Número binario:2, octal:8, hexadecimal:16"<<endl;
+    std::cout<<"Digite a base para conversao:"<<endl;
+    std::cout<<"Numero binario:2, octal:8, hexadecimal:16"<<endl;
     cin>>base;
-    std::cout<<"Digite um número para conversão:"<<endl;
+    std::cout<<"Digite um numero para conversao:"<<endl;
     cin>>n;
+
+    char escolha;
+    bool passo;
+    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    cin>>escolha;
+    if (escolha=='S'){
+        passo=true;
+    } else {
+        passo=false;
+    }
 
     int tamanho = n.size();
     
-    cout<<"Resultado: ";
     if (base==2){
+        if (passo){
+            cout<<"Digito Potencia Resultado"<<endl;
+        }
         
         for (int i=0; i<tamanho; i++){
             digito=n[i]-'0'; 
-            
-            decimal+=digito * pow(2, tamanho-1-i);
+           
+            decimal=digito * pow(2, tamanho-1-i);
+            resultado+=decimal;
+
+            if (passo){
+                cout<<digito<<"        ";
+                cout<<"2^"<<tamanho-1-i<<"        ";
+                cout<<decimal<<endl;
+            }
         }
+        cout<<"Resultado "<<resultado<<endl;
     } 
     else if (base==8){
+        if (passo){
+            cout<<"Digito Potencia Resultado"<<endl;
+        }
+        
         for (int i=0; i<tamanho; i++){
             digito=n[i]-'0';
-            decimal+=digito * pow(8, tamanho-1-i);
+            decimal=digito * pow(8, tamanho-1-i);
+            resultado+=decimal;
+            
+            if (passo){
+                cout<<digito<<"        ";
+                cout<<"8^"<<tamanho-1-i<<"        ";
+                cout<<decimal<<endl;
+            }
         }
+        cout<<"Resultado "<<resultado<<endl;
     }
     else if (base==16){
+        if (passo){
+            cout<<"Digito Potencia Resultado"<<endl;
+        }
+        
         for (int i=0; i<tamanho; i++){
             if (n[i]>='0' and n[i]<='9'){
                 digito=n[i] - '0';
@@ -98,10 +159,17 @@ void basepdecimal() {
             else if (n[i]=='F'){
                 digito=15;
             }
-            decimal+=digito * pow(16, tamanho-1-i);
+            decimal=digito * pow(16, tamanho-1-i);
+            resultado+=decimal;
+
+            if (passo){
+                cout<<digito<<"        ";
+                cout<<"16^"<<tamanho-1-i<<"        ";
+                cout<<decimal<<endl;
+            }
         }
+        cout<<"Resultado "<<resultado<<endl;
     }
-    cout<<decimal;
     
     return;
 }
@@ -109,7 +177,7 @@ void binariopoctal(){
     int digito, result;
     string binario, agrup="";
 
-    cout<<"Digite o número binário para ser convertido:"<<endl;
+    cout<<"Digite o numero binario para ser convertido:"<<endl;
     cin>>binario;
 
     int tamanho = binario.size();
@@ -159,7 +227,7 @@ void octalpbinario(){
     int digito;
     string numero;
 
-    cout<<"Digite o número para ser convertido:"<<endl;
+    cout<<"Digite o numero para ser convertido:"<<endl;
     cin>>numero;
 
     int tamanho=numero.size();
@@ -202,7 +270,7 @@ void binariophexad(){
     int base, digito, result;
     string binario, agrup="";
 
-    cout<<"Digite o número binário para ser convertido:"<<endl;
+    cout<<"Digite o numero binario para ser convertido:"<<endl;
     cin>>binario;
 
     int tamanho = binario.size();
@@ -276,7 +344,7 @@ void hexadpbinario(){
     int digito;
     string numero;
 
-    cout<<"Digite o número para ser convertido:"<<endl;
+    cout<<"Digite o numero para ser convertido:"<<endl;
     cin>>numero;
     
     int tamanho=numero.size();
@@ -346,7 +414,7 @@ void calcmaximos(){
 
     maximo = pow(2, bits) -1; //maximo esta em decimal
     
-    cout<<"Maior número binário: ";
+    cout<<"Maior numero binario: ";
     int resto[100];
     if (maximo==0){
         cout<<"0";
@@ -365,7 +433,7 @@ void calcmaximos(){
     }
     cout<<endl;
 
-    cout<<"Maior número octal: ";
+    cout<<"Maior numero octal: ";
     int resto1[100];
     if (maximo==0){
         cout<<"0";
@@ -385,9 +453,9 @@ void calcmaximos(){
     }
     cout<<endl;
 
-    cout<<"Maior número decimal: "<<maximo<<endl;
+    cout<<"Maior numero decimal: "<<maximo<<endl;
 
-    cout<<"Maior número hexadecimal: ";
+    cout<<"Maior numero hexadecimal: ";
     int resto2[100];
     if (maximo==0){
         cout<<"0";
@@ -419,20 +487,20 @@ void calcmaximos(){
             cout<<'F';
         }
     }
-    
+
     return;
 }
 
 int main(){
     int opcao;
-    cout<<"Digite o número da operação a ser realizada:"<<endl;
+    cout<<"Digite o numero da operacao a ser realizada:"<<endl;
     cout<<"1:Decimal para binario/octal/hexadecimal"<<endl;
-    cout<<"2:Binário/octal/hexadecimal para decimal"<<endl;
-    cout<<"3:Binário para octal"<<endl;
-    cout<<"4:Octal para binário"<<endl;
-    cout<<"5:Binário para hexadecimal"<<endl;
-    cout<<"6:Hexadecimal para binário"<<endl;
-    cout<<"7:Calculadora de máximo representável por k bits"<<endl;
+    cout<<"2:Binario/octal/hexadecimal para decimal"<<endl;
+    cout<<"3:Binario para octal"<<endl;
+    cout<<"4:Octal para binario"<<endl;
+    cout<<"5:Binario para hexadecimal"<<endl;
+    cout<<"6:Hexadecimal para binario"<<endl;
+    cout<<"7:Calculadora de maximo representavel por k bits"<<endl;
 
     cin>>opcao;
 
