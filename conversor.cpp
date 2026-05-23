@@ -270,39 +270,74 @@ void octalpbinario(){
     cout<<"Digite o numero para ser convertido:"<<endl;
     cin>>numero;
 
+    char escolha;
+    bool passo;
+    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    cin>>escolha;
+    if (escolha=='S'){
+        passo=true;
+    } else {
+        passo=false;
+    }
+
     int tamanho=numero.size();
 
-    cout<<"Resultado: ";
+    cout<<"Octal Binario"<<endl;
 
+    string result="";
     for (int i=0; i<tamanho; i++){
         digito=numero[i];
             
         if (digito=='0'){
-            cout<<"000";
+            if (passo){
+                cout<<"0"<<"      000"<<endl;
+            }
+            result+="000";
         }
         else if (digito=='1'){
-            cout<<"001";
+            if (passo){
+                cout<<"1"<<"      001"<<endl;
+            }
+            result+="001";
         }
         else if (digito=='2'){
-            cout<<"010";
+             if (passo){
+                cout<<"2"<<"      010"<<endl;
+            }
+            result+="010";
         }
         else if (digito=='3'){
-           cout<<"011";
+            if (passo){
+                cout<<"3"<<"      011"<<endl;
+            }
+            result+="011";
         }
         else if (digito=='4'){
-            cout<<100;
+             if (passo){
+                cout<<"4"<<"      100"<<endl;
+            }
+            result+="100";
         }
         else if (digito=='5'){
-            cout<<101;
+             if (passo){
+                cout<<"5"<<"      101"<<endl;
+            }
+            result+="101";
         }
         else if (digito=='6'){
-            cout<<110;
+             if (passo){
+                cout<<"6"<<"      110"<<endl;
+            }
+            result+="110";
         }
         else if (digito=='7'){
-            cout<<111;
+             if (passo){
+                cout<<"7"<<"      111"<<endl;
+            }
+            result+="111";
         }
-
     }
+    cout<<result<<endl;
 
     return;
 }
