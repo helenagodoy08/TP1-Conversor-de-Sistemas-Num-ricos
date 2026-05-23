@@ -342,76 +342,141 @@ void octalpbinario(){
     return;
 }
 void binariophexad(){
-    int base, digito, result;
+    int base, digito;
     string binario, agrup="";
 
     cout<<"Digite o numero binario para ser convertido:"<<endl;
     cin>>binario;
 
+    char escolha;
+    bool passo;
+    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    cin>>escolha;
+    if (escolha=='S'){
+        passo=true;
+    } else {
+        passo=false;
+    }
+
     int tamanho = binario.size();
 
     while (binario.size()%4 !=0){
-            binario = "0" + binario;
-        }
+        binario = "0" + binario;
+    }
 
-        cout<<"Resultado: ";
-        for (int i=0; i<binario.size(); i+=4){
-            agrup="";
+    if (passo){
+        cout<<"Completando zeros: "<<binario<<endl;
+        cout<<endl;
+        cout<<"Grupo Hexadecimal"<<endl;
+    }
 
-            agrup+=binario[i];
-            agrup+=binario[i+1];
-            agrup+=binario[i+2];
-            agrup+=binario[i+3];
+    string result="";
+    for (int i=0; i<binario.size(); i+=4){
+        agrup="";
+
+        agrup+=binario[i];
+        agrup+=binario[i+1];
+        agrup+=binario[i+2];
+        agrup+=binario[i+3];
             
-            if (agrup=="0000"){
-                cout<<0;
+        if (agrup=="0000"){
+            if (passo){
+                cout<<agrup<<"     0"<<endl;
             }
-            else if (agrup=="0001"){
-                cout<<1;
+            result+="0";
+        }
+        else if (agrup=="0001"){
+            if (passo){
+                cout<<agrup<<"     1"<<endl;
             }
-            else if (agrup=="0010"){
-                cout<<2;
+            result+="1";
+        }
+        else if (agrup=="0010"){
+            if (passo){
+                cout<<agrup<<"     2"<<endl;
             }
-            else if (agrup=="0011"){
-                cout<<3;
+            result+="2";
+        }
+        else if (agrup=="0011"){
+            if (passo){
+                cout<<agrup<<"     3"<<endl;
             }
-            else if (agrup=="0100"){
-                cout<<4;
+            result+="3";
+        }
+        else if (agrup=="0100"){
+            if (passo){
+                cout<<agrup<<"     4"<<endl;
             }
-            else if (agrup=="0101"){
-                cout<<5;
+            result+="4";
+        }
+        else if (agrup=="0101"){
+            if (passo){
+                cout<<agrup<<"     5"<<endl;
             }
-            else if (agrup=="0110"){
-                cout<<6;
+            result+="5";
+        }
+        else if (agrup=="0110"){
+            if (passo){
+                cout<<agrup<<"     6"<<endl;
             }
-            else if (agrup=="0111"){
-                cout<<7;
+            result+="6";
+        }
+        else if (agrup=="0111"){
+            if (passo){
+                cout<<agrup<<"     7"<<endl;
             }
-            else if (agrup=="1000"){
-                cout<<8;
+            result+="7";
+        }
+        else if (agrup=="1000"){
+            if (passo){
+                cout<<agrup<<"     8"<<endl;
             }
-            else if (agrup=="1001"){
-                cout<<9;
+            result+="8";
+        }
+        else if (agrup=="1001"){
+            if (passo){
+                cout<<agrup<<"     9"<<endl;
             }
-            else if (agrup=="1010"){
-                cout<<"A";
+            result+="9";
+        }
+        else if (agrup=="1010"){
+            if (passo){
+                cout<<agrup<<"     A"<<endl;
             }
-            else if (agrup=="1011"){
-                cout<<"B";
+            result+="A";
+        }
+        else if (agrup=="1011"){
+            if (passo){
+                cout<<agrup<<"     B"<<endl;
             }
-            else if (agrup=="1100"){
-                cout<<"C";
+            result+="B";
+        }
+        else if (agrup=="1100"){
+            if (passo){
+                cout<<agrup<<"     C"<<endl;
             }
-            else if (agrup=="1101"){
-                cout<<"D";
+            result+="C";
+        }
+        else if (agrup=="1101"){
+            if (passo){
+                cout<<agrup<<"     D"<<endl;
             }
-            else if (agrup=="1110"){
-                cout<<"E";
+            result+="D";
+        }
+        else if (agrup=="1110"){
+            if (passo){
+                cout<<agrup<<"     E"<<endl;
             }
-            else if (agrup=="1111"){
-                cout<<"F";
+            result+="E";
+        }
+        else if (agrup=="1111"){
+            if (passo){
+                cout<<agrup<<"     F"<<endl;
             }
-        } 
+            result+="F";
+        }
+    }
+    cout<<"Resultado: "<<result<<endl;
     
     return;
 }
@@ -422,62 +487,122 @@ void hexadpbinario(){
     cout<<"Digite o numero para ser convertido:"<<endl;
     cin>>numero;
     
+    char escolha;
+    bool passo;
+    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    cin>>escolha;
+    if (escolha=='S'){
+        passo=true;
+    } else {
+        passo=false;
+    }
+
     int tamanho=numero.size();
 
-    cout<<"Resultado: ";
+    cout<<"Hexadecimal Binario"<<endl;
 
+    string result="";
     for (int i=0; i<tamanho; i++){
        digito=numero[i];
             
        if (digito=='0'){
-            cout<<"0000";
+            if (passo){
+                cout<<"0"<<"      0000"<<endl;
+            }
+            result+="0000";
         }
         else if (digito=='1'){
-            cout<<"0001";
+            if (passo){
+                cout<<"1"<<"      0001"<<endl;
+            }
+            result+="0001";
         }
         else if (digito=='2'){
-            cout<<"0010";
+            if (passo){
+                cout<<"2"<<"      0010"<<endl;
+            }
+            result+="0010";
         }
         else if (digito=='3'){
-            cout<<"0011";
+            if (passo){
+                cout<<"3"<<"      0011"<<endl;
+            }
+            result+="0011";
         }
         else if (digito=='4'){
-           cout<<"0100";
+           if (passo){
+                cout<<"4"<<"      0100"<<endl;
+            }
+            result+="0100";
         }
         else if (digito=='5'){
-            cout<<"0101";
+            if (passo){
+                cout<<"5"<<"      0101"<<endl;
+            }
+            result+="0101";
         }
         else if (digito=='6'){
-            cout<<"0110";
+            if (passo){
+                cout<<"6"<<"      0110"<<endl;
+            }
+            result+="0110";
         }
         else if (digito=='7'){
-            cout<<"0111";
+            if (passo){
+                cout<<"7"<<"      0111"<<endl;
+            }
+            result+="0111";
         }
         else if (digito=='8'){
-            cout<<"1000";
+            if (passo){
+                cout<<"8"<<"      1000"<<endl;
+            }
+            result+="1000";
         }
         else if (digito=='9'){
-            cout<<"1001";
+            if (passo){
+                cout<<"9"<<"      1001"<<endl;
+            }
+            result+="1001";
         }
         else if (digito=='A'){
-            cout<<"1010";
+            if (passo){
+                cout<<"A"<<"      1010"<<endl;
+            }
+            result+="1010";
         }
         else if (digito=='B'){
-            cout<<"1011";
+            if (passo){
+                cout<<"B"<<"      1011"<<endl;
+            }
+            result+="1011";
         }
         else if (digito=='C'){
-            cout<<"1100";
+            if (passo){
+                cout<<"C"<<"      1100"<<endl;
+            }
+            result+="1100";
         }
         else if (digito=='D'){
-            cout<<"1101";
+            if (passo){
+                cout<<"D"<<"      1101"<<endl;
+            }
+            result+="1101";
         }
         else if (digito=='E'){
-            cout<<"1110";
+            if (passo){
+                cout<<"E"<<"      1110"<<endl;
+            }
+            result+="1110";
         }
         else if (digito=='F'){
-            cout<<"1111";
+            if (passo){
+                cout<<"F"<<"      1111"<<endl;
+            }
+            result+="1111";
         }
     }
+    cout<<"Resultado: "<<result<<endl;
 
     return;
 }
@@ -485,9 +610,26 @@ void calcmaximos(){
     int bits, maximo;
 
     cout<<"Insira a quantidade de bits"<<endl;
-    cin>>bits; //pow(base,expoente)
+    cin>>bits; 
+
+    char escolha;
+    bool passo;
+    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    cin>>escolha;
+    if (escolha=='S'){
+        passo=true;
+    } else {
+        passo=false;
+    }
 
     maximo = pow(2, bits) -1; //maximo esta em decimal
+
+    if (passo){
+        cout<<"Bits Expressao Resultado"<<endl;
+        cout<<bits<<"      ";
+        cout<<"2^"<<bits<<" - 1"<<"      ";
+        cout<<maximo<<endl;
+    }
     
     cout<<"Maior numero binario: ";
     int resto[100];
