@@ -174,52 +174,92 @@ void basepdecimal() {
     return;
 }
 void binariopoctal(){
-    int digito, result;
+    int digito;
     string binario, agrup="";
 
     cout<<"Digite o numero binario para ser convertido:"<<endl;
     cin>>binario;
 
+    char escolha;
+    bool passo;
+    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    cin>>escolha;
+    if (escolha=='S'){
+        passo=true;
+    } else {
+        passo=false;
+    }
+
     int tamanho = binario.size();
 
     while (binario.size()%3 !=0){
-            binario= "0"+binario;
-        }
-        
-        cout<<"Resultado: ";
-        for (int i=0; i<binario.size(); i+=3){
-            agrup="";
-            
-            agrup+=binario[i];   
-            agrup+=binario[i+1]; 
-            agrup+=binario[i+2]; 
+        binario= "0"+binario;
+    }
     
+    if (passo){
+        cout<<"Completando zeros: "<<binario<<endl;
+        cout<<endl;
+        cout<<"Grupo Octal"<<endl;
+    }
+        
+    string result="";
+    for (int i=0; i<binario.size(); i+=3){
+        agrup="";
 
-            if (agrup=="000"){
-                cout<<0;
+        agrup+=binario[i];   
+        agrup+=binario[i+1]; 
+        agrup+=binario[i+2]; 
+    
+        if (agrup=="000"){
+            if (passo){
+                cout<<agrup<<"     0"<<endl;
             }
-            else if (agrup=="001"){
-                cout<<1;
-            }
-            else if (agrup=="010"){
-                cout<<2;
-            }
-            else if (agrup=="011"){
-                cout<<3;
-            }
-            else if (agrup=="100"){
-                cout<<4;
-            }
-            else if (agrup=="101"){
-                cout<<5;
-            }
-            else if (agrup=="110"){
-                cout<<6;
-            }   
-            else if (agrup=="111"){
-                cout<<7;
-            }
+            result+="0";
         }
+        else if (agrup=="001"){
+            if (passo){
+                cout<<agrup<<"     1"<<endl;
+            }
+            result+="1";
+        }
+        else if (agrup=="010"){
+            if (passo){
+                cout<<agrup<<"     2"<<endl;
+            }
+            result+="2";
+        }
+        else if (agrup=="011"){
+            if (passo){
+                cout<<agrup<<"     3"<<endl;
+            }
+            result+="3";
+        }
+        else if (agrup=="100"){
+            if (passo){
+                cout<<agrup<<"     4"<<endl;
+            }
+            result+="4";
+        }
+        else if (agrup=="101"){
+            if (passo){
+                cout<<agrup<<"     5"<<endl;
+            }
+            result+="5";
+        }
+        else if (agrup=="110"){
+            if (passo){
+                cout<<agrup<<"     6"<<endl;
+            }
+            result+="6";
+        }   
+        else if (agrup=="111"){
+            if (passo){
+                cout<<agrup<<"     7"<<endl;
+            }
+            result+="7";
+        }
+    }
+    cout<<"Resultado: "<<result;
 
     return;
 }
