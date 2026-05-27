@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "arquivoHPP.hpp"
 using namespace std;
 
@@ -11,7 +12,7 @@ int main() {
     cout<<"3. Quiz de conversões."<<endl;
     cout<<"----------------------"<<endl;
 
-    int opcao;
+    int opcao, opcao1;
     cin>>opcao;
 
     double numero;
@@ -22,42 +23,53 @@ int main() {
     //Modo batch: ler arquivo entrada.csv para conversoes
 
     if (opcao == 1) {
+        cout<<"|-_-_-_-_-_ Escolha a operação desejada _-_-_-_-_-|"<<endl;
+        cout<<"1. Decimal para binário/octal/hexadecimal."<<endl;
+        cout<<"2. Binário/octal/hexadecimal para decimal."<<endl;
+        cout<<"3. Binário para octal."<<endl;
+        cout<<"4. Octal para binário."<<endl;
+        cout<<"5. Binário para hexadecimal."<<endl;
+        cout<<"6. Hexadecimal para binário."<<endl;
+        cout<<"7. Octal para hexadecimal."<<endl;
+        cout<<"8. Hexadecimal para octal."<<endl;
+        
+        cin>>opcao1;
 
-        cout<<"Qual número quer converter? "<<endl;
-        cin>>numero;
-
-        cout<<"Qual a base desse número? (2, 8, 10 ou 16) "<<endl;
-        cin>>baseOriginal;
-        if (baseOriginal != 2 && baseOriginal != 8 && baseOriginal != 10 && baseOriginal != 16){
-            cout<<"Erro: base inválida! Tente novamente."<<endl;
-            exit(1);
+        if (opcao1==1){
+            dec_base();
         }
-
-        cout<<"Para qual base deseja converter? (2, 8, 10 ou 16) "<<endl;
-        cin>>baseConversao;
-        if (baseConversao != 2 && baseConversao != 8 && baseConversao != 10 && baseConversao != 16){
-            cout<<"Erro: base inválida! Tente novamente."<<endl;
-            exit(1);
+        else if (opcao1==2){
+            base_dec();
         }
-
-        //Mensagens de erro
+        else if (opcao1==3){
+            bin_oct();
+        }
+        else if (opcao1==4){
+            oct_bin();
+        }   
+        else if (opcao1==5){
+            bin_hex();
+        }
+        else if (opcao1==6){
+            hex_bin();
+        }
+        else if (opcao1==7){
+            oct_hex();
+        }
+        else if (opcao1==8){
+            hex_oct();
+        }
 
     }
+    else if (opcao==2){
+        calc_max();
+    }
+    else if (opcao==3){
 
-    //Fazer as outras opções
-    /*else if (opcao == 2) {}
-    else if (opcao == 3) {}*/
-    else {cout<<"Erro: opção inválida! Tente novamente."<<endl;}
-
-    //resultados
-    if (baseOriginal == 10) {dec_base(numero, baseConversao);}
-    /*else if (baseConversao == 10) {base_dec();}
-    else if (baseOriginal == 2 && baseConversao == 8) {bin_oct();}
-    else if (baseOriginal == 8 && baseConversao == 2) {oct_bin();}
-    else if (baseOriginal == 2 && baseConversao == 16) {bin_hex();}
-    else if (baseOriginal == 16 && baseConversao == 2) {hex_bin();}
-    else if (baseOriginal == 8 && baseConversao == 16) {oct_hex();}
-    else if (baseOriginal == 16 && baseConversao == 8) {hex_oct();}*/
+    }
+    else {
+        cout<<"Erro: opção inválida! Tente novamente."<<endl;
+    }
 
     return 0;
 }
