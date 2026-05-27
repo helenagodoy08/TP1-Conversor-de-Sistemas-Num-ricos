@@ -1,5 +1,5 @@
-#ifndef arquivoHPP_HPP
-#define arquivoHPP_HPP
+#ifndef CONVERSORES_HPP
+#define CONVERSORES_HPP
 #include <string>
 
 /*int valorChar(char c);

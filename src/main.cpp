@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "arquivoHPP.hpp"
+#include "conversores.hpp"
 using namespace std;
 
 int main() {
@@ -14,9 +14,6 @@ int main() {
 
     int opcao, opcao1;
     cin>>opcao;
-
-    double numero;
-    int baseOriginal, baseConversao;
 
     //Precisa das mensagens de erro
     //modo passo a passo para conversões
@@ -58,6 +55,9 @@ int main() {
         }
         else if (opcao1==8){
             hex_oct();
+        }
+        else {
+            cout<<"Erro: opção inválida! Tente novamente."<<endl;
         }
 
     }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
-#include "arquivoHPP.hpp"
+#include "conversores.hpp"
 using namespace std;
 
 string digitos = "0123456789ABCDEF";
