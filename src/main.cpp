@@ -1,18 +1,13 @@
 #include <iostream>
 #include <cmath>
 #include "conversores.hpp"
+#include "formatador.hpp"
 using namespace std;
 
 int main() {
-    cout<<"|-_-_-_-_-_ Escolha a operação desejada _-_-_-_-_-|"<<endl;
-    cout<<"1. Conversão de bases."<<endl;
-    cout<<"----------------------"<<endl;
-    cout<<"2. Calcular máximos."<<endl;
-    cout<<"----------------------"<<endl;
-    cout<<"3. Quiz de conversões."<<endl;
-    cout<<"----------------------"<<endl;
-
     int opcao, opcao1;
+
+    menu();
     cin>>opcao;
 
     //Precisa das mensagens de erro
