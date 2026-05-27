@@ -15,15 +15,7 @@ int main() {
     //Modo batch: ler arquivo entrada.csv para conversoes
 
     if (opcao == 1) {
-        cout<<"|-_-_-_-_-_ Escolha a operação desejada _-_-_-_-_-|"<<endl;
-        cout<<"1. Decimal para binário/octal/hexadecimal."<<endl;
-        cout<<"2. Binário/octal/hexadecimal para decimal."<<endl;
-        cout<<"3. Binário para octal."<<endl;
-        cout<<"4. Octal para binário."<<endl;
-        cout<<"5. Binário para hexadecimal."<<endl;
-        cout<<"6. Hexadecimal para binário."<<endl;
-        cout<<"7. Octal para hexadecimal."<<endl;
-        cout<<"8. Hexadecimal para octal."<<endl;
+        menu1();
         
         cin>>opcao1;
 
@@ -52,7 +44,7 @@ int main() {
             hex_oct();
         }
         else {
-            cout<<"Erro: opção inválida! Tente novamente."<<endl;
+            erro();
         }
 
     }
@@ -63,7 +55,7 @@ int main() {
 
     }
     else {
-        cout<<"Erro: opção inválida! Tente novamente."<<endl;
+       erro();
     }
 
     return 0;

@@ -2,6 +2,7 @@
 #include <cmath>
 #include <algorithm>
 #include "conversores.hpp"
+#include "formatador.hpp"
 using namespace std;
 
 string digitos = "0123456789ABCDEF";
@@ -29,10 +30,16 @@ void dec_base() {
 
     cout<<"Digite um número decimal:"<<endl;
     cin>>decimal;
+    if (decimal=='A' or decimal=='B' or decimal=='C' or decimal=='D' or decimal=='E' or decimal=='F'){
+        erro();
+    }
 
     cout<<"Digite a base para conversão:"<<endl;
     cout<<"Para base binária:2, octal:8 e hexadecimal:16"<<endl;
     cin>>base;
+    if (base!='2' or base!='8'){
+        erro();
+    }
 
     char escolha;
     bool passo;
@@ -51,7 +58,7 @@ void dec_base() {
 
     if (passo){
         cout<<"Número Divisor Quociente Resto"<<endl;
-        
+
     }
 
     int i=0;
@@ -192,6 +199,9 @@ void base_dec(){
             }
         }
         cout<<"Resultado "<<resultado<<endl;
+    }
+    else {
+        erro();
     }
 
     return;
