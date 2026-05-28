@@ -1,15 +1,22 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
+
 #include "conversores.hpp"
+#include "formatador.hpp"
+
 using namespace std;
 
-//1. Decimal -> bases feito
+//1. Decimal -> bases
+
+//1. Decimal -> bases
 void dec_base() {
     int decimal, base;
     int resto[100];
 
-    cout<<"Digite um número decimal:"<<endl;
+    num();
     cin>>decimal;
 
     cout<<"Digite a base para conversão:"<<endl;
@@ -23,7 +30,7 @@ void dec_base() {
 
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -38,7 +45,7 @@ void dec_base() {
 
     if (passo){
         cout<<"Número Divisor Quociente Resto"<<endl;
-        
+
     }
 
     int i=0;
@@ -81,7 +88,7 @@ void dec_base() {
     return;
 }
 
-//2. Bases -> decimal feito
+//2. Bases -> decimal
 void base_dec(){
     int base, decimal=0;
     int digito=0, resultado=0;
@@ -90,6 +97,7 @@ void base_dec(){
     std::cout<<"Digite a base para conversão:"<<endl;
     std::cout<<"Numero binário:2, octal:8, hexadecimal:16"<<endl;
     cin>>base;
+    num();
 
     if (base!=2 and base!=8 and base!=16){
         cout<<"Erro: base inválida! Tente novamente."<<endl;
@@ -101,7 +109,7 @@ void base_dec(){
 
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -186,16 +194,19 @@ void base_dec(){
         }
         cout<<"Resultado "<<resultado<<endl;
     }
+    else {
+        erro();
+    }
 
     return;
 }
 
-//3. Binário -> octal feito
+//3. Binário -> octal
 void bin_oct(){
     int digito;
     string binario, agrup="";
 
-    cout<<"Digite o numero binário para ser convertido:"<<endl;
+    num();
     cin>>binario;
 
     bool invalido = false;
@@ -209,7 +220,7 @@ void bin_oct(){
 
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -291,12 +302,12 @@ void bin_oct(){
     return;
 }
 
-//4. Octal -> binário feito
+//4. Octal -> binário
 void oct_bin(){
     int digito;
     string numero;
 
-    cout<<"Digite o número para ser convertido:"<<endl;
+    num();
     cin>>numero;
 
     bool invalido = false;
@@ -310,7 +321,7 @@ void oct_bin(){
 
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -382,12 +393,12 @@ void oct_bin(){
     return;
 }
 
-//5. Binário -> hexadecimal feito
+//5. Binário -> hexadecimal
 void bin_hex(){
     int base, digito;
     string binario, agrup="";
 
-    cout<<"Digite o número binário para ser convertido:"<<endl;
+    num();
     cin>>binario;
 
     bool invalido = false;
@@ -401,7 +412,7 @@ void bin_hex(){
 
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -532,12 +543,12 @@ void bin_hex(){
     return;
 }
 
-//6. Hexadecimal -> binário feito
+//6. Hexadecimal -> binário
 void hex_bin(){
     int digito;
     string numero;
 
-    cout<<"Digite o número para ser convertido:"<<endl;
+    num();
     cin>>numero;
 
     bool invalido = false;
@@ -551,7 +562,7 @@ void hex_bin(){
     
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -669,12 +680,12 @@ void hex_bin(){
     return;
 }
 
-//7. Octal -> hexadecimal feito
+//7. Octal -> hexadecimal
 void oct_hex(){
     int digito;
     string numero, agrup;
 
-    cout<<"Digite o número para ser convertido:"<<endl;
+    num();
     cin>>numero;
 
     bool invalido = false;
@@ -688,7 +699,7 @@ void oct_hex(){
 
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -892,7 +903,7 @@ void hex_oct(){
     int digito;
     string numero, result, agrup="";
 
-    cout<<"Digite o número para ser convertido:"<<endl;
+    num();
     cin>>numero;
 
     bool invalido = false;
@@ -906,7 +917,7 @@ void hex_oct(){
     
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
@@ -1109,7 +1120,7 @@ void calc_max(){
 
     char escolha;
     bool passo;
-    cout<<"Ativar modo passo a passo? Digite S ou N"<<endl;
+    modopap();
     cin>>escolha;
     if (escolha=='S'){
         passo=true;
