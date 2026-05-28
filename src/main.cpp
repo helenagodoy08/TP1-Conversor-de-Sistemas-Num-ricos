@@ -10,9 +10,11 @@ int main() {
     menu();
     cin>>opcao;
 
-    //Precisa das mensagens de erro
     //modo passo a passo para conversões
     //Modo batch: ler arquivo entrada.csv para conversoes
+    //numeros com virgula separados pro . ou ,
+    //modo quiz
+    // fazer o hexadecimal e modo passo a passo aceitar letras minusculas (e editar nas mensagens de erro)
 
     if (opcao == 1) {
         cout<<"|-_-_-_-_-_ Escolha a operação desejada _-_-_-_-_-|"<<endl;
@@ -60,7 +62,7 @@ int main() {
         calc_max();
     }
     else if (opcao==3){
-
+          //quiz();
     }
     else {
         cout<<"Erro: opção inválida! Tente novamente."<<endl;

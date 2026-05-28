@@ -4,25 +4,7 @@
 #include "conversores.hpp"
 using namespace std;
 
-string digitos = "0123456789ABCDEF";
-
-/*/Auxiliares
-int valorChar(char c) {      //função que converte char pra int
-    c = toupper(c);   //toupper converte minúscula pra maiúscula
-
-    for (size_t i = 0; i < digitos.size(); i++) {
-        if (digitos[i] == c)
-            return static_cast<int>(i);
-    }
-
-    return -1;
-}
-
-char charValor(int v) {    //converte int pra char
-    return digitos[v];
-}*/
-
-//1. Decimal -> bases
+//1. Decimal -> bases feito
 void dec_base() {
     int decimal, base;
     int resto[100];
@@ -33,6 +15,11 @@ void dec_base() {
     cout<<"Digite a base para conversão:"<<endl;
     cout<<"Para base binária:2, octal:8 e hexadecimal:16"<<endl;
     cin>>base;
+
+    if (base!=2 and base!=8 and base!=16){
+        cout<<"Erro: base inválida! Tente novamente."<<endl;
+        return;
+    }
 
     char escolha;
     bool passo;
@@ -94,7 +81,7 @@ void dec_base() {
     return;
 }
 
-//2. Bases -> decimal
+//2. Bases -> decimal feito
 void base_dec(){
     int base, decimal=0;
     int digito=0, resultado=0;
@@ -103,6 +90,12 @@ void base_dec(){
     std::cout<<"Digite a base para conversão:"<<endl;
     std::cout<<"Numero binário:2, octal:8, hexadecimal:16"<<endl;
     cin>>base;
+
+    if (base!=2 and base!=8 and base!=16){
+        cout<<"Erro: base inválida! Tente novamente."<<endl;
+        return;
+    }
+
     std::cout<<"Digite um número para conversão:"<<endl;
     cin>>n;
 
@@ -197,13 +190,22 @@ void base_dec(){
     return;
 }
 
-//3. Binário -> octal
+//3. Binário -> octal feito
 void bin_oct(){
     int digito;
     string binario, agrup="";
 
     cout<<"Digite o numero binário para ser convertido:"<<endl;
     cin>>binario;
+
+    bool invalido = false;
+    for (char c : binario) {
+        if (c != '0' && c != '1') {
+            invalido = true;
+            cout<<"Erro: número binário inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
 
     char escolha;
     bool passo;
@@ -289,13 +291,22 @@ void bin_oct(){
     return;
 }
 
-//4. Octal -> binário
+//4. Octal -> binário feito
 void oct_bin(){
     int digito;
     string numero;
 
     cout<<"Digite o número para ser convertido:"<<endl;
     cin>>numero;
+
+    bool invalido = false;
+    for (char c : numero) {
+        if (c < '0' || c > '7') {
+            invalido = true;
+            cout<<"Erro: número octal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
 
     char escolha;
     bool passo;
@@ -371,13 +382,22 @@ void oct_bin(){
     return;
 }
 
-//5. Binário -> hexadecimal
+//5. Binário -> hexadecimal feito
 void bin_hex(){
     int base, digito;
     string binario, agrup="";
 
     cout<<"Digite o número binário para ser convertido:"<<endl;
     cin>>binario;
+
+    bool invalido = false;
+    for (char c : binario) {
+        if (c != '0' && c != '1') {
+            invalido = true;
+            cout<<"Erro: número binário inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
 
     char escolha;
     bool passo;
@@ -512,13 +532,22 @@ void bin_hex(){
     return;
 }
 
-//6. Hexadecimal -> binário
+//6. Hexadecimal -> binário feito
 void hex_bin(){
     int digito;
     string numero;
 
     cout<<"Digite o número para ser convertido:"<<endl;
     cin>>numero;
+
+    bool invalido = false;
+    for (char c : numero) {
+        if (c < '0' || c > 'F') {
+            invalido = true;
+            cout<<"Erro: número hexadecimal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
     
     char escolha;
     bool passo;
@@ -640,13 +669,22 @@ void hex_bin(){
     return;
 }
 
-//7. Octal -> hexadecimal
+//7. Octal -> hexadecimal feito
 void oct_hex(){
     int digito;
     string numero, agrup;
 
     cout<<"Digite o número para ser convertido:"<<endl;
     cin>>numero;
+
+    bool invalido = false;
+    for (char c : numero) {
+        if (c < '0' || c > '7') {
+            invalido = true;
+            cout<<"Erro: número octal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
 
     char escolha;
     bool passo;
@@ -856,6 +894,15 @@ void hex_oct(){
 
     cout<<"Digite o número para ser convertido:"<<endl;
     cin>>numero;
+
+    bool invalido = false;
+    for (char c : numero) {
+        if (c < '0' || c > 'F') {
+            invalido = true;
+            cout<<"Erro: número hexadecimal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
     
     char escolha;
     bool passo;
@@ -1155,4 +1202,3 @@ void calc_max(){
 
     return;
 }
-

@@ -1,9 +1,7 @@
 #ifndef CONVERSORES_HPP
 #define CONVERSORES_HPP
 #include <string>
-
-/*int valorChar(char c);
-char charValor(int v);*/
+#include <iostream>
 
 void dec_base();
 void base_dec();
