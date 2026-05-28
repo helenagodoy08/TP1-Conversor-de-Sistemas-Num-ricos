@@ -1,25 +1,13 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
+
 #include "conversores.hpp"
 #include "formatador.hpp"
+
 using namespace std;
-
-/*/Auxiliares
-int valorChar(char c) {      //função que converte char pra int
-    c = toupper(c);   //toupper converte minúscula pra maiúscula
-
-    for (size_t i = 0; i < digitos.size(); i++) {
-        if (digitos[i] == c)
-            return static_cast<int>(i);
-    }
-
-    return -1;
-}
-
-char charValor(int v) {    //converte int pra char
-    return digitos[v];
-}*/
 
 //1. Decimal -> bases
 void dec_base() {

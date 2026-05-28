@@ -1,7 +1,12 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
+
 #include "conversores.hpp"
 #include "formatador.hpp"
+#include "quiz.hpp"
+
 using namespace std;
 
 int main() {
@@ -52,7 +57,7 @@ int main() {
         calc_max();
     }
     else if (opcao==3){
-
+        modo_quiz();
     }
     else {
        erro();
