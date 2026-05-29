@@ -3,22 +3,30 @@
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
+#include <string>
 
 #include "conversores.hpp"
 #include "formatador.hpp"
 #include "quiz.hpp"
+#include "parser.hpp"
 
 using namespace std;
 
 //1. Decimal -> bases
-
-//1. Decimal -> bases
 void dec_base() {
-    int decimal, base;
+    int num, base;
     int resto[100];
-
+    string valor; 
+    
     numero();
-    cin>>decimal;
+    cin>>valor;
+
+    //separador do parser
+    string inteiro;
+    string frac;
+    separador(valor, inteiro, frac);
+   
+    num=stoi(inteiro); //vai transformar em int
 
     cout<<"Digite a base para conversão:"<<endl;
     cout<<"Para base binária:2, octal:8 e hexadecimal:16"<<endl;
@@ -39,7 +47,7 @@ void dec_base() {
         passo=false;
     }
 
-    if (decimal==0){
+    if (num==0){
         cout<<"Resultado: 0";
         return;
     }
@@ -50,16 +58,16 @@ void dec_base() {
     }
 
     int i=0;
-    while (decimal>0){
+    while (num>0){
         if (passo){
-            cout << decimal << "        ";
+            cout << num << "        ";
             cout << base << "        ";
-            cout << decimal/base << "        ";
-            cout << decimal%base << endl;
+            cout << num/base << "        ";
+            cout << num%base << endl;
 
         }
-        resto[i]=decimal%base;
-        decimal=decimal/base;
+        resto[i]=num%base;
+        num=num/base;
         i++;
     }
 
@@ -84,7 +92,6 @@ void dec_base() {
         } else if (resto[j]==15){
             cout<<'F';
         }
-
     }
     return;
 }
@@ -99,17 +106,22 @@ void base_dec(){
     std::cout<<"Numero binário:2, octal:8, hexadecimal:16"<<endl;
     cin>>base;
 
-    numero();
-
-
     if (base!=2 and base!=8 and base!=16){
         cout<<"Erro: base inválida! Tente novamente."<<endl;
         return;
     }
+    
+    numero();
 
-    std::cout<<"Digite um número para conversão:"<<endl;
-
-    cin>>n;
+    //separador do parser.cpp
+    string valor;
+    string inteiro;
+    string frac;
+    
+    cin>>valor; //valor inserido antes da funcao
+    separador (valor, inteiro, frac); //parametros tem q ficar na msm ordem do parser 
+    
+    n=inteiro;
 
     char escolha;
     bool passo;
@@ -211,11 +223,19 @@ void bin_oct(){
     string binario, agrup="";
 
     numero();
-    cin>>binario;
+
+    //separador do parser.cpp
+    string valor;
+    string inteiro;
+    string frac;
+    
+    cin>>valor;
+    separador(valor, inteiro, frac);
+    binario=inteiro;
 
     bool invalido = false;
     for (char c : binario) {
-        if (c != '0' && c != '1') {
+        if (c!='0' && c!='1') {
             invalido = true;
             cout<<"Erro: número binário inválido! Tente novamente."<<endl;
             return;
@@ -239,6 +259,7 @@ void bin_oct(){
     }
     
     if (passo){
+        cout<<endl;
         cout<<"Completando zeros: "<<binario<<endl;
         cout<<endl;
         cout<<"Grupo Octal"<<endl;
@@ -312,7 +333,15 @@ void oct_bin(){
     string num;
 
     numero();
-    cin>>num;
+
+    //separador do parser.cpp
+    string valor;
+    string inteiro;
+    string frac;
+
+    cin>>valor;
+    separador(valor, inteiro, frac);
+    num=inteiro;
 
     bool invalido = false;
     for (char c : num) {
@@ -403,7 +432,15 @@ void bin_hex(){
     string binario, agrup="";
 
     numero();
-    cin>>binario;
+
+    //separador do parser.cpp
+    string valor;
+    string inteiro;
+    string frac;
+    
+    cin>>valor;
+    separador(valor, inteiro, frac);
+    binario=inteiro;
 
     bool invalido = false;
     for (char c : binario) {
@@ -553,7 +590,14 @@ void hex_bin(){
     string num;
 
     numero();
-    cin>>num;
+
+    //separador do parser.cpp
+    string valor;
+    string inteiro;
+    string frac;
+    cin>>valor;
+    separador(valor, inteiro, frac);
+    num=inteiro;
 
     bool invalido = false;
     for (char c : num) {
@@ -690,7 +734,14 @@ void oct_hex(){
     string num, agrup;
 
     numero();
-    cin>>num;
+
+    //separador do parser.cpp
+    string valor;
+    string inteiro;
+    string frac;
+    cin>>valor;
+    separador(valor, inteiro, frac);
+    num=inteiro;
 
     bool invalido = false;
     for (char c : num) {
@@ -908,7 +959,14 @@ void hex_oct(){
     string num, result, agrup="";
 
     numero();
-    cin>>num;
+
+    //separador do parser.cpp
+    string valor;
+    string inteiro;
+    string frac;
+    cin>>valor;
+    separador(valor, inteiro, frac);
+    num=inteiro;
 
     bool invalido = false;
     for (char c : num) {
@@ -1328,5 +1386,3 @@ string dec_hex_quiz(int num){
     }
     return result;
 }
-
-
