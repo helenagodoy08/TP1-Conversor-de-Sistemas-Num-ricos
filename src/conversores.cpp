@@ -6,6 +6,7 @@
 
 #include "conversores.hpp"
 #include "formatador.hpp"
+#include "quiz.hpp"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ void dec_base() {
     int decimal, base;
     int resto[100];
 
-    num();
+    numero();
     cin>>decimal;
 
     cout<<"Digite a base para conversão:"<<endl;
@@ -90,7 +91,7 @@ void base_dec(){
     std::cout<<"Digite a base para conversão:"<<endl;
     std::cout<<"Numero binário:2, octal:8, hexadecimal:16"<<endl;
     cin>>base;
-    num();
+    numero();
     cin>>n;
 
     char escolha;
@@ -192,7 +193,7 @@ void bin_oct(){
     int digito;
     string binario, agrup="";
 
-    num();
+    numero();
     cin>>binario;
 
     char escolha;
@@ -282,10 +283,10 @@ void bin_oct(){
 //4. Octal -> binário
 void oct_bin(){
     int digito;
-    string numero;
+    string num;
 
-    num();
-    cin>>numero;
+    numero();
+    cin>>num;
 
     char escolha;
     bool passo;
@@ -297,7 +298,7 @@ void oct_bin(){
         passo=false;
     }
 
-    int tamanho=numero.size();
+    int tamanho=num.size();
 
     if (passo){
         cout<<"Octal Binário"<<endl;
@@ -305,7 +306,7 @@ void oct_bin(){
 
     string result="";
     for (int i=0; i<tamanho; i++){
-        digito=numero[i];
+        digito=num[i];
             
         if (digito=='0'){
             if (passo){
@@ -366,7 +367,7 @@ void bin_hex(){
     int base, digito;
     string binario, agrup="";
 
-    num();
+    numero();
     cin>>binario;
 
     char escolha;
@@ -505,10 +506,10 @@ void bin_hex(){
 //6. Hexadecimal -> binário
 void hex_bin(){
     int digito;
-    string numero;
+    string num;
 
-    num();
-    cin>>numero;
+    numero();
+    cin>>num;
     
     char escolha;
     bool passo;
@@ -520,13 +521,13 @@ void hex_bin(){
         passo=false;
     }
 
-    int tamanho=numero.size();
+    int tamanho=num.size();
 
     cout<<"Hexadecimal Binário"<<endl;
 
     string result="";
     for (int i=0; i<tamanho; i++){
-       digito=numero[i];
+       digito=num[i];
             
        if (digito=='0'){
             if (passo){
@@ -633,10 +634,10 @@ void hex_bin(){
 //7. Octal -> hexadecimal
 void oct_hex(){
     int digito;
-    string numero, agrup;
+    string num, agrup;
 
-    num();
-    cin>>numero;
+    numero();
+    cin>>num;
 
     char escolha;
     bool passo;
@@ -648,7 +649,7 @@ void oct_hex(){
         passo=false;
     }
 
-    int tamanho=numero.size();
+    int tamanho=num.size();
 
     if (passo){
         cout<<"Octal Binário"<<endl;
@@ -656,7 +657,7 @@ void oct_hex(){
 
     string binario="";
     for (int i=0; i<tamanho; i++){
-        digito=numero[i];
+        digito=num[i];
             
         if (digito=='0'){
             if (passo){
@@ -842,10 +843,10 @@ void oct_hex(){
 //8. Hexadecimal -> octal
 void hex_oct(){
     int digito;
-    string numero, result, agrup="";
+    string num, result, agrup="";
 
-    num();
-    cin>>numero;
+    numero();
+    cin>>num;
     
     char escolha;
     bool passo;
@@ -857,13 +858,13 @@ void hex_oct(){
         passo=false;
     }
 
-    int tamanho=numero.size();
+    int tamanho=num.size();
 
     cout<<"Hexadecimal Binário"<<endl;
 
     string binario="";
     for (int i=0; i<tamanho; i++){
-       digito=numero[i];
+       digito=num[i];
             
        if (digito=='0'){
             if (passo){
@@ -1146,3 +1147,113 @@ void calc_max(){
     return;
 }
 
+//Conversores individuais do quiz
+string dec_bin_quiz(int num){
+    int resto[100];
+    string result="";
+
+    if (num==0){
+        result="0";
+        return result;
+    }
+
+    int i=0;
+    while (num>0){
+        resto[i]=num%2;
+        num=num/2;
+        i++;
+    }
+    
+    for (int j=i-1; j>=0; j--){
+        if (resto[j]<10){
+            result+=char(resto[j]+'0');
+            //+'0' tranforma em char
+            //resto é int e precisa ser transformado
+        } else if (resto[j]==10){
+            result+='A';
+        } else if (resto[j]==11){
+            result+='B';
+        } else if (resto[j]==12){
+            result+='C';
+        } else if (resto[j]==13){
+            result+='D';
+        } else if (resto[j]==14){
+            result+='E';
+        } else if (resto[j]==15){
+            result+='F';
+        }
+    }
+    return result;
+}
+
+string dec_oct_quiz(int num){
+    int resto[100];
+    string result="";
+
+    if (num==0){
+        result="0";
+        return result;
+    }
+
+    int i=0;
+    while (num>0){
+        resto[i]=num%8;
+        num=num/8;
+        i++;
+    }
+    
+    for (int j=i-1; j>=0; j--){
+        if (resto[j]<10){
+            result+=char(resto[j]+'0');
+        } else if (resto[j]==10){
+            result+='A';
+        } else if (resto[j]==11){
+            result+='B';
+        } else if (resto[j]==12){
+            result+='C';
+        } else if (resto[j]==13){
+            result+='D';
+        } else if (resto[j]==14){
+            result+='E';
+        } else if (resto[j]==15){
+            result+='F';
+        }
+    }
+    return result;
+}
+
+string dec_hex_quiz(int num){
+    int resto[100];
+    string result="";
+
+    if (num==0){
+        result="0";
+        return result;
+    }
+
+    int i=0;
+    while (num>0){
+        resto[i]=num%16;
+        num=num/16;
+        i++;
+    }
+    
+    for (int j=i-1; j>=0; j--){
+        if (resto[j]<10){
+            result+=char(resto[j]+'0');
+        } else if (resto[j]==10){
+            result+='A';
+        } else if (resto[j]==11){
+            result+='B';
+        } else if (resto[j]==12){
+            result+='C';
+        } else if (resto[j]==13){
+            result+='D';
+        } else if (resto[j]==14){
+            result+='E';
+        } else if (resto[j]==15){
+            result+='F';
+        }
+    }
+    return result;
+}

@@ -4,7 +4,8 @@
     void menu();
     void menu1();
     void erro();
-    void num();
+    void numero();
     void modopap();
+    void menuquiz();
 
 #endif

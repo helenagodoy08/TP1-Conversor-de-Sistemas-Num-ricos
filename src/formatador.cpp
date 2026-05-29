@@ -1,5 +1,6 @@
 #include "conversores.hpp"
 #include "formatador.hpp"
+#include "quiz.hpp"
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -32,10 +33,20 @@ void erro(){
    cout<<"Erro: opção inválida! Tente novamente."<<endl;
 }
 
-void num(){
+void numero(){
     cout<<"Digite um número para conversão:"<<endl;
 }
 
 void modopap(){
     cout<<"Ativar modo passo a passo? Digite S/N"<<endl;
+}
+
+void menuquiz(){
+    cout<<"|-_-_-_-_-_ Modo Quiz _-_-_-_-_-|"<<endl;
+    cout<<"Escolha a dificuldade:"<<endl;
+    cout<<"1 - Muito fácil"<<endl;
+    cout<<"2 - Fácil"<<endl;
+    cout<<"3 - Normal"<<endl;
+    cout<<"4 - Difícil"<<endl;
+    cout<<"5 - Muito difícil"<<endl;
 }
