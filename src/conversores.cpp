@@ -11,6 +11,8 @@
 using namespace std;
 
 //1. Decimal -> bases
+
+//1. Decimal -> bases
 void dec_base() {
     int decimal, base;
     int resto[100];
@@ -21,6 +23,11 @@ void dec_base() {
     cout<<"Digite a base para conversão:"<<endl;
     cout<<"Para base binária:2, octal:8 e hexadecimal:16"<<endl;
     cin>>base;
+
+    if (base!=2 and base!=8 and base!=16){
+        cout<<"Erro: base inválida! Tente novamente."<<endl;
+        return;
+    }
 
     char escolha;
     bool passo;
@@ -91,7 +98,17 @@ void base_dec(){
     std::cout<<"Digite a base para conversão:"<<endl;
     std::cout<<"Numero binário:2, octal:8, hexadecimal:16"<<endl;
     cin>>base;
+
     numero();
+
+
+    if (base!=2 and base!=8 and base!=16){
+        cout<<"Erro: base inválida! Tente novamente."<<endl;
+        return;
+    }
+
+    std::cout<<"Digite um número para conversão:"<<endl;
+
     cin>>n;
 
     char escolha;
@@ -196,6 +213,15 @@ void bin_oct(){
     numero();
     cin>>binario;
 
+    bool invalido = false;
+    for (char c : binario) {
+        if (c != '0' && c != '1') {
+            invalido = true;
+            cout<<"Erro: número binário inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
+
     char escolha;
     bool passo;
     modopap();
@@ -288,6 +314,15 @@ void oct_bin(){
     numero();
     cin>>num;
 
+    bool invalido = false;
+    for (char c : num) {
+        if (c < '0' || c > '7') {
+            invalido = true;
+            cout<<"Erro: número octal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
+
     char escolha;
     bool passo;
     modopap();
@@ -369,6 +404,15 @@ void bin_hex(){
 
     numero();
     cin>>binario;
+
+    bool invalido = false;
+    for (char c : binario) {
+        if (c != '0' && c != '1') {
+            invalido = true;
+            cout<<"Erro: número binário inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
 
     char escolha;
     bool passo;
@@ -510,6 +554,15 @@ void hex_bin(){
 
     numero();
     cin>>num;
+
+    bool invalido = false;
+    for (char c : num) {
+        if (c < '0' || c > 'F') {
+            invalido = true;
+            cout<<"Erro: número hexadecimal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
     
     char escolha;
     bool passo;
@@ -638,6 +691,15 @@ void oct_hex(){
 
     numero();
     cin>>num;
+
+    bool invalido = false;
+    for (char c : num) {
+        if (c < '0' || c > '7') {
+            invalido = true;
+            cout<<"Erro: número octal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
 
     char escolha;
     bool passo;
@@ -847,6 +909,15 @@ void hex_oct(){
 
     numero();
     cin>>num;
+
+    bool invalido = false;
+    for (char c : num) {
+        if (c < '0' || c > 'F') {
+            invalido = true;
+            cout<<"Erro: número hexadecimal inválido! Tente novamente."<<endl;
+            return;
+        }
+    }
     
     char escolha;
     bool passo;
@@ -1257,3 +1328,5 @@ string dec_hex_quiz(int num){
     }
     return result;
 }
+
+

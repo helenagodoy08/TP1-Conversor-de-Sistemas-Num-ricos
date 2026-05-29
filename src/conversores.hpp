@@ -1,6 +1,7 @@
 #ifndef CONVERSORES_HPP
 #define CONVERSORES_HPP
 #include <string>
+#include <iostream>
 using namespace std;
 
 /*int valorChar(char c);
