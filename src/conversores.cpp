@@ -33,7 +33,7 @@ void dec_base() {
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -115,7 +115,7 @@ void base_dec(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -226,7 +226,7 @@ void bin_oct(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -327,7 +327,7 @@ void oct_bin(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -418,7 +418,7 @@ void bin_hex(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -568,7 +568,7 @@ void hex_bin(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -705,7 +705,7 @@ void oct_hex(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -923,7 +923,7 @@ void hex_oct(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
@@ -1126,7 +1126,7 @@ void calc_max(){
     bool passo;
     modopap();
     cin>>escolha;
-    if (escolha=='S'){
+    if (escolha=='S' or escolha=='s'){
         passo=true;
     } else {
         passo=false;
