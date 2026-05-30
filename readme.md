@@ -30,7 +30,6 @@ TP1 Durelli/
 │   ├── parser.hpp            # declaração da função de separador de números fracionários
 │   ├── quiz.cpp              # menu do quiz e implementação das funções de conversão
 │   └── quiz.hpp              # declaração das funcões do modo quiz
-├── entrada.csv               # exemplo de arquivo de entrada para o modo batch
 └── README.md                 #descrição instruções do projeto
 ```
 ---
