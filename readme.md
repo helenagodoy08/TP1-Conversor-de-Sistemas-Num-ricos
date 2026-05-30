@@ -40,6 +40,21 @@ TP1 Durelli/
 ## Instruções de execução
 
 Certifique-se de ter o compilador 'g++' instalado;
+Para compilar:;
+
+```bash
+g++ main.cpp conversores.cpp formatador.cpp parser.cpp quiz.cpp -o main.exe
+```
+Para executar:;
+
+```bash
+./main.exe
+```
+## Como utilizar
+
+Após a execução, o programa deve exibir um menu com três opções:
+
+
 
 ## Exemplos
 
