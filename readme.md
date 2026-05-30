@@ -90,24 +90,113 @@ Escolha a dificuldade:
 
 ## Exemplos de uso
 
-### Conversão simples (Menu principal -> 1)
+### Conversão simples 
 
-(Exemplo conversão decimal -> binária)
+Menu principal -> 1.
 
+Exemplo de conversão decimal -> binário (opção -> 1. no menu secundário)
 
+```
+Digite um número para conversão:8
+Digite a base para conversão:2
+Ativar modo passo a passo? Digite S/N: N
 
-
-
-### Trace passo a passo 
-
-### Base inválida
+Resultado: 1000
+```
 
 ### Calculadora de máximos
 
+Menu principal -> 2.
+
+```
+Insira a quantidade de bits:8
+Ativar modo passo a passo? Digite S/N: N
+
+Maior número binário: 11111111
+Maior número octal: 377
+Maior número decimal: 255
+Maior número hexadecimal: FF
+
+```
+
+### Trace passo a passo 
+Menu principal -> 1.
+
+Exemplo de conversão decimal -> binário (opção -> 1. no menu secundário);
+
+```
+Digite um número para conversão:8
+Digite a base para conversão:2
+Ativar modo passo a passo? Digite S/N: S
+
+Número Divisor Quociente Resto
+8        2        4        0
+4        2        2        0
+2        2        1        0
+1        2        0        1
+
+Lendo os resultados de baixo para cima:
+Resultado: 1000
+```
+
+Exemplo calculadora de máximos (opção -> 2 no menu principal);
+
+```
+Insira a quantidade de bits:8
+Ativar modo passo a passo? Digite S/N: N
+
+Bits Expressão Resultado
+8      2^8 - 1      255
+
+Maior número binário: 11111111
+Maior número octal: 377
+Maior número decimal: 255
+Maior número hexadecimal: FF
+
+```
+
+### Base inválida
+
+Menu principal -> 1.
+
+Exemplo de conversão decimal -> binário (opção -> 1. no menu secundário)
+
+```
+Digite um número para conversão:8
+Digite a base para conversão:3
+
+Erro: base inválida! Tente novamente.
+```
+
 ### Modo quiz 
+
+Menu principal -> 3.
+
+Exemplo de quiz nível 'muito fácil' (opção ->1. no menu secundário)
+
+```
+===Questão 1===
+Converta 6 decimal para hexadecimal:
+6
+Resposta correta!
+
+===Questão 2===
+Converta 3 decimal para octal:
+4
+Errado!
+Resposta correta: 3
+
+[...]
+
+=== Resultado Final ===
+Pontuação: (quantidade de acertos)/5
+
+```
 
 ## Limitações do projeto
 
 - Projeto não suporta números fracionários;
   
 - Modo quiz não suporta números fracionários;
+
+- Modo quiz não tem passo a passo das respostas;
