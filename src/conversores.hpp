@@ -4,9 +4,6 @@
 #include <iostream>
 using namespace std;
 
-/*int valorChar(char c);
-char charValor(int v);*/
-
 void dec_base();
 void base_dec();
 void bin_oct();
@@ -19,6 +16,5 @@ void calc_max();
 string dec_bin_quiz(int num);
 string dec_oct_quiz(int num);
 string dec_hex_quiz(int num);
-
 
 #endif

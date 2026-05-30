@@ -43,8 +43,13 @@ void dec_base() {
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
+    }
+    else {
+        erro();
+        return;
     }
 
     if (num==0){
@@ -129,8 +134,13 @@ void base_dec(){
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
+    }
+    else {
+        erro();
+        return;
     }
 
     int tamanho = n.size();
@@ -248,8 +258,13 @@ void bin_oct(){
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
+    }
+    else {
+        erro();
+        return;
     }
 
     int tamanho = binario.size();
@@ -358,8 +373,13 @@ void oct_bin(){
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
+    }
+    else {
+        erro();
+        return;
     }
 
     int tamanho=num.size();
@@ -457,8 +477,13 @@ void bin_hex(){
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
+    }
+    else {
+        erro();
+        return;
     }
 
     int tamanho = binario.size();
@@ -614,8 +639,13 @@ void hex_bin(){
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
+    }
+    else {
+        erro();
+        return;
     }
 
     int tamanho=num.size();
@@ -758,10 +788,14 @@ void oct_hex(){
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
     }
-
+    else {
+        erro();
+        return;
+    }
     int tamanho=num.size();
 
     if (passo){
@@ -983,8 +1017,13 @@ void hex_oct(){
     cin>>escolha;
     if (escolha=='S' or escolha=='s'){
         passo=true;
-    } else {
+    }
+    else if (escolha=='N' or escolha=='n'){
         passo=false;
+    }
+    else {
+        erro();
+        return;
     }
 
     int tamanho=num.size();

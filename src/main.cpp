@@ -15,12 +15,6 @@ int main() {
     menu();
     cin>>opcao;
 
-    //modo passo a passo para conversões
-    //Modo batch: ler arquivo entrada.csv para conversoes
-    //numeros com virgula separados pro . ou ,
-    //modo quiz
-    // fazer o hexadecimal e modo passo a passo aceitar letras minusculas (e editar nas mensagens de erro)
-
     if (opcao == 1) {
         menu1();
         
@@ -59,9 +53,11 @@ int main() {
         calc_max();
     }
     else if (opcao==3){
-          //quiz();
         modo_quiz();
     }
+    //else if (opcao==4){
+       // modo_batch();
+    //}
     else {
        erro();
     }
